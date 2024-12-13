@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+	--primary-color-black: #111214;
+	--primary-color-main-color: #fe390c;
+	--secondary-color-grey-100: #a7aab4;
+	--secondary-color-grey-10: #f7f7f7;
+	--text-color-black: #111214;
+	--text-color-grey: #a9a9aa;
+	--ui-color-primary: #6750a3;
+
+    --font-family: "Montserrat", sans-serif;
+    --second-family: "Anton", sans-serif;
+}
+
+/* default styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* end default styles */
+
+body{
+    font-family: var(--font-family);
+}
+
+/* header */
+
+.header{
+    height: 100vh;
+     background-image: url(../images/Background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header-top{
+    padding: 24px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.link{
+    text-decoration: none;
+    color: var(--text-color-grey);
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: .3s linear;
+}
+
+.link:hover{
+    color: var(--primary-color-main-color);
+}
+
+.burger{
+    display: none;
+}
+
+.contact-link {
+    border: 1px solid var(--primary-color-main-color);
+    border-radius: 4px;
+    padding: 12px 16px;
+    width: 92px;
+    height: 39px;
+    display: block;
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--primary-color-main-color);
+}
+
+.header-bottom {
+    padding: 218px 0 225px 0;
+}
+
+.header-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* end header */
+
+@media(max-width:980px){
+    .nav{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: #816262;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: -1000px;
+        transition: .9s linear;
+    }
+
+    .nav.active{
+        top: 0;
+    }
+
+    .menu{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .burger{
+        display: block;
+        width: 60px;
+        height: 40px;
+        background: red;
+        position: relative;
+        transition: .3s linear;
+        z-index: 5;
+    }
+
+    .burger.active{
+        background: green;
+    }
+}
