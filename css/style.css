@@ -36,6 +36,10 @@ button {
     cursor: pointer;
 }
 
+ul {
+    list-style: none;
+}
+
 /* end default styles */
 
 body {
@@ -362,7 +366,111 @@ body {
     gap: 60px;
 }
 
+.service-card {
+    background: var(--secondary-color-grey-10);
+    padding: 40px 30px 30px 20px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.service-card svg {
+    fill: var(--primary-color-main-color);
+}
+
+.service-card:hover {
+    background: var(--primary-color-main-color);
+}
+
+.service-card-title {
+    margin: 24px 0 8px 0;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: -0.04em;
+}
+
+.service-card-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.02em;
+    color: var(--text-color-grey);
+}
+
+.service-card:hover .service-card-title {
+    color: #fff;
+}
+
+.service-card:hover .service-card-text {
+    color: #ffd7ce;
+}
+
+.service-card:hover svg {
+    fill: #fff;
+}
+
+
 /* end service */
+
+/* portfolio */
+
+.portfolio {
+    background: var(--secondary-color-grey-10);
+    padding: 72px 0;
+}
+
+.portfolio-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portfolio-list {
+    display: flex;
+    gap: 12px;
+}
+
+.portfolio-item {
+    padding: 12px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-color-grey);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.portfolio-item:hover {
+    border: 1px solid var(--primary-color-main-color);
+    border-radius: 4px;
+    color: var(--primary-color-main-color);
+}
+
+.slider-left {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color-main-color);
+    background-image: url(../images/Arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider-right {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color-main-color);
+    background-image: url(../images/Arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.portfolio-btn {
+    display: flex;
+    gap: 24px;
+}
+
+/* end portfolio */
 
 @media(max-width:980px) {
     .nav {
