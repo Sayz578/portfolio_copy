@@ -16,4 +16,22 @@ $(document).ready(function () {
         prevArrow: "<button type='button' class='slick-prev slider-left'> <img src = './images/Arrow-left.svg'alt = 'arow' /></button>",
         nextArrow: "<button type='button' class='slick-next slider-right'> <img src = './images/Arrow-right.svg' alt = 'arow' /></button>"
     });
+    $('.testimonial-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots:true,
+        prevArrow: "<button type='button' class='slick-prev slider-left'> <img src = './images/Arrow-left.svg'alt = 'arow' /></button>",
+        nextArrow: "<button type='button' class='slick-next slider-right'> <img src = './images/Arrow-right.svg' alt = 'arow' /></button>"
+    })
+    let slider = $('.testimonial-slider')
+    let totalslider = slider.children().length
+    let sliderNumber = $('.last-number')
+
+    slider.on('afterChange', function(e, slick, currentSlide){
+        let number = (currentSlide + 1).toString().padStart(2, '0')
+        sliderNumber.text(`/${number}`)       
+    })
 });
+
+
