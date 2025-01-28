@@ -16,6 +16,7 @@ $(document).ready(function () {
         prevArrow: "<button type='button' class='slick-prev slider-left'> <img src = './images/Arrow-left.svg'alt = 'arow' /></button>",
         nextArrow: "<button type='button' class='slick-next slider-right'> <img src = './images/Arrow-right.svg' alt = 'arow' /></button>"
     });
+
     $('.testimonial-slider').slick({
         infinite: true,
         slidesToShow: 1,
@@ -26,6 +27,7 @@ $(document).ready(function () {
     })
     let slider = $('.testimonial-slider')
     let totalslider = slider.children().length
+    // console.log(totalslider);
     let sliderNumber = $('.last-number')
 
     slider.on('afterChange', function(e, slick, currentSlide){
@@ -34,4 +36,6 @@ $(document).ready(function () {
     })
 });
 
+const year = new Date().getFullYear()
+document.querySelector(".yaer").textContent = year
 
