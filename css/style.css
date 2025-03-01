@@ -41,11 +41,26 @@ ul {
 }
 
 /* end default styles */
+html,
+body {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: var(--font-family);
     color: var(--primary-color-black);
     font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.hedden {
+    overflow-y: hidden;
 }
 
 .container {
@@ -54,6 +69,32 @@ body {
     margin: 0 auto;
     /* центрирует по центру*/
     /* background: green; */
+}
+
+.inner-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2.29;
+    letter-spacing: -0.02em;
+    color: var(--text-color-grey);
+}
+
+.arrow-up {
+    display: flex;
+    position: fixed;
+    z-index: 4;
+    right: -20px;
+    bottom: 20%;
+    width: 50px;
+    opacity: 0;
+    transition: .3s linear;
+    background: var(--primary-color-main-color);
+    border-radius: 50%;
+}
+
+.arrow-up.active {
+    opacity: 1;
+    right: 20px;
 }
 
 .btn-orange {
@@ -90,6 +131,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 87px;
 }
 
 .header-top {
@@ -97,6 +139,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    transition: .3s linear;
+}
+
+.header-top.active {
+    background: var(--primary-color-black);
+    padding: 19px 15px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.59);
 }
 
 .nav {
@@ -122,7 +177,8 @@ body {
     transition: .3s linear;
 }
 
-.link:hover {
+.link:hover,
+.link.active {
     color: var(--primary-color-main-color);
 }
 
@@ -145,6 +201,7 @@ body {
 
 .header-bottom {
     padding: 218px 0 225px 0;
+
 }
 
 .header-bottom .container {
@@ -199,6 +256,36 @@ body {
     text-transform: capitalize;
 }
 
+.header__about {
+    background: url(../images/about-bg.jpg) no-repeat center/cover;
+    padding-top: 87px;
+}
+
+.header-content__about .header-title {
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+.header-content__about {
+    padding: 100px 0 150px 0;
+}
+
+.header-sub__about {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: -0.04em;
+    color: var(--text-color-grey);
+    margin-top: 16px;
+}
+
+.header-sub__about span {
+    color: #fff;
+    font-weight: 700;
+}
+
 /* end header */
 
 
@@ -215,8 +302,7 @@ body {
     flex-wrap: wrap;
 }
 
-.about-block,
-.about-content {
+.about-block {
     max-width: 521px;
     width: 100%;
 }
@@ -283,6 +369,8 @@ body {
     margin-bottom: 15px;
 }
 
+
+
 /* end section about */
 
 /* partners */
@@ -294,6 +382,7 @@ body {
 .partners-wrapper {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 90px;
     padding: 90px 0 190px 0;
 }
@@ -318,6 +407,7 @@ body {
 .work-wrapper h2 {
     font-family: var(--second-family);
     font-size: 40px;
+    font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: #fff;
@@ -364,6 +454,8 @@ body {
 
 .service-wrapper {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 55px;
     gap: 60px;
 }
@@ -373,6 +465,8 @@ body {
     padding: 40px 30px 30px 20px;
     cursor: pointer;
     transition: 0.3s linear;
+    width: 100%;
+    max-width: 230px;
 }
 
 .service-card svg {
@@ -427,10 +521,13 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 63px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .portfolio-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -459,7 +556,7 @@ body {
     position: absolute;
     right: 64px;
     top: -128px;
-    z-index: 10;
+    z-index: 2;
 }
 
 .slider-right {
@@ -469,7 +566,7 @@ body {
     position: absolute;
     right: 0;
     top: -128px;
-    z-index: 10;
+    z-index: 2;
 }
 
 .portfolio-btn {
@@ -562,6 +659,10 @@ li.slick-active button {
     justify-content: space-between;
 }
 
+.media-title {
+    display: none;
+}
+
 .testimonial-slide figure {
     max-width: 364px;
     width: 100%;
@@ -646,7 +747,7 @@ li.slick-active button {
 .testimonial-slider ul.slick-dots {
     margin-top: -25px;
     position: relative;
-    z-index: 5;
+    z-index: 2;
 }
 
 /* end testimonial */
@@ -758,7 +859,10 @@ li.slick-active button {
     font-size: 12px;
     letter-spacing: -0.02em;
     color: rgba(169, 169, 170, 0.6);
+    transition: .3s linear;
 }
+
+
 
 .form textarea {
     border-radius: 2px;
@@ -772,6 +876,12 @@ li.slick-active button {
     font-size: 12px;
     letter-spacing: -0.02em;
     color: rgba(169, 169, 170, 0.6);
+    transition: .3s linear;
+}
+
+.form-block input:focus,
+.form textarea:focus {
+    outline: 1px solid var(--primary-color-main-color);
 }
 
 .message {
@@ -805,3 +915,99 @@ li.slick-active button {
 
 
 /* end footer */
+
+/* aboutme */
+
+.aboutme {
+    padding: 80px 0 120px 0;
+}
+
+.aboutme .about-block {
+    gap: 0;
+    max-width: 485px;
+    width: 100%;
+}
+
+.container-aboutme {
+    display: flex;
+    gap: 73px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-aboutme .about-descript {
+    padding-left: 0;
+    max-width: 558px;
+    width: 100%;
+}
+
+.container-aboutme .about-content {
+    max-width: 578px;
+    width: 100%;
+}
+
+.container-aboutme .about-descript:last-of-type {
+    margin-bottom: 0;
+}
+
+.aboutme-title {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 32px;
+    text-transform: capitalize;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.aboutme .inner-title {
+    margin-bottom: 44px;
+}
+
+.container-aboutme .about-item {
+    flex-direction: row;
+    margin-top: 32px;
+    align-items: flex-start;
+    gap: 64px;
+}
+
+.container-aboutme .about-info {
+    flex-direction: row;
+    text-align: left;
+}
+
+/* end aboutme */
+
+/* skills */
+
+.skills {
+    background: var(--secondary-color-grey-10);
+    padding: 80px 150px;
+}
+
+.container-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 97px;
+}
+
+.skills-content {
+    max-width: 485px;
+    width: 100%;
+}
+
+.skills-text {
+    margin: 12px 0 32px 0;
+}
+
+.skills-link {
+    display: block;
+    width: 148px;
+    height: 47px;
+    border-radius: 4px;
+    padding: 16px 0px;
+    text-align: center;
+}
+
+/* end skills */
