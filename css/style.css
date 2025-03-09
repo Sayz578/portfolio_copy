@@ -104,6 +104,9 @@ main {
 
 .text-orange {
     color: var(--primary-color-main-color);
+    font-family: var(--second-family);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .data-number {
@@ -121,6 +124,10 @@ main {
     display: flex;
     align-items: center;
     gap: 24px;
+}
+
+.inner-title .text-orange {
+    font-size: 80px;
 }
 
 /* header */
@@ -1010,4 +1017,157 @@ li.slick-active button {
     text-align: center;
 }
 
+.skills-sidebar {
+    max-width: 558px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.skill-item {
+    position: relative;
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.04em;
+    color: var(--primary-color-black);
+    margin-bottom: 12px;
+}
+
+.skill-bar {
+    border-radius: 24px;
+    width: 100%;
+    height: 6px;
+    background: #dddee0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.skill-level {
+    border-radius: 24px;
+    height: 6px;
+    background: var(--primary-color-main-color);
+}
+
+.ui-level {
+    width: 90%;
+}
+
+.fr-level {
+    width: 85%;
+}
+
+.gr-level {
+    width: 70%;
+}
+
+.pr-level {
+    width: 65%;
+}
+
+
+.skill-pers {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.04em;
+    text-align: right;
+    color: var(--primary-color-black);
+}
+
 /* end skills */
+/* experiances */
+
+.experiances {
+    padding: 117px 0 120px 0;
+}
+
+.experiances-title {
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.experiances-wrapper {
+    display: flex;
+    gap: 72px;
+    align-items: flex-start;
+}
+
+.experiance-block {
+    width: 214px;
+}
+
+.item {
+    margin: 24px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item .text-orange {
+    font-size: 40px;
+}
+
+.experiance-job {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: -0.04em;
+    color: var(--primary-color-black);
+}
+
+.experiance-year {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -0.04em;
+    color: var(--primary-color-main-color);
+}
+
+.block-yahoo {
+    transform: translateY(40px);
+}
+
+
+.block-zen {
+    transform: translateY(75px);
+}
+
+
+.block-web {
+    transform: translateY(120px);
+    margin-bottom: 120px;
+}
+
+/* mypartners */
+
+.mypartners {
+    background: var(--secondary-color-grey-10);
+    padding: 60px 0;
+}
+
+.mypartners-title {
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.mypartners-wrapper {
+    display: flex;
+    column-gap: 80px;
+    row-gap: 56px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 974px;
+    width: 100%;
+    margin: 0 auto 80px;
+}
+
+/* end mypartners */
